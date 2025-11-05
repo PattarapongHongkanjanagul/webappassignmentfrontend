@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="th">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Logs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <!-- Nav -->
+        <nav aria-label="Main">
+            <a href="./index.html">Config</a>
+            <a href="./form.html">Log Form</a>
+            <a href="./logs.html" aria-current="page">Logs</a>
+        </nav>
+
+        <!-- Heading -->
+        <h1>Drone Logs</h1>
+        <div id="status" class="notice">กำลังเตรียมข้อมูล…</div>
+
+        <!-- Card / Table -->
+        <div class="card" role="region" aria-label="Logs Table">
+            <table aria-describedby="status">
+                <thead>
+                    <tr>
+                        <th scope="col">Created</th>
+                        <th scope="col">Country</th>
+                        <th scope="col">Drone ID</th>
+                        <th scope="col">Drone Name</th>
+                        <th scope="col">Celsius</th>
+                    </tr>
+                </thead>
+
+                <!-- ใส่ skeleton ไว้รอ (logs.js จะเขียนทับ) -->
+                <tbody id="tb">
+                    <tr>
+                        <td><span class="skel" style="width:140px"></span></td>
+                        <td><span class="skel" style="width:90px"></span></td>
+                        <td><span class="skel" style="width:70px"></span></td>
+                        <td><span class="skel" style="width:120px"></span></td>
+                        <td><span class="skel" style="width:60px"></span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="skel" style="width:140px"></span></td>
+                        <td><span class="skel" style="width:90px"></span></td>
+                        <td><span class="skel" style="width:70px"></span></td>
+                        <td><span class="skel" style="width:120px"></span></td>
+                        <td><span class="skel" style="width:60px"></span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="skel" style="width:140px"></span></td>
+                        <td><span class="skel" style="width:90px"></span></td>
+                        <td><span class="skel" style="width:70px"></span></td>
+                        <td><span class="skel" style="width:120px"></span></td>
+                        <td><span class="skel" style="width:60px"></span></td>
+                    </tr>
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <td colspan="5" style="display:flex; gap:10px; align-items:center; justify-content:flex-start">
+                            <button id="prev" class="btn-ghost" aria-label="Previous page">Prev</button>
+                            <span id="page" class="notice" aria-live="polite">Page 1</span>
+                            <button id="next" class="" aria-label="Next page">Next</button>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div class="footer">
+            แสดง 12 รายการล่าสุดต่อหน้า — ใช้ปุ่ม Prev / Next เพื่อเลื่อนหน้า
+        </div>
+    </div>
+
+    <!-- Logic -->
+    <script type="module" src="/src/logs.js"></script>
+</body>
+
+</html>

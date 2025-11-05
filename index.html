@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Drone Config</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <nav>
+      <a href="./index.html">Config</a>
+      <a href="./form.html">Log Form</a>
+      <a href="./logs.html">Logs</a>
+    </nav>
+
+    <h1>Drone Config</h1>
+    <div id="status" class="notice"></div>
+
+    <div class="card">
+      <div class="row">
+        <div><label>Drone ID</label>
+          <div class="value" id="v_id">-</div>
+        </div>
+        <div><label>Drone Name</label>
+          <div class="value" id="v_name">-</div>
+        </div>
+        <div><label>Light</label>
+          <div class="value" id="v_light">-</div>
+        </div>
+        <div><label>Country</label>
+          <div class="value" id="v_country">-</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">Tip: หน้านี้จะโหลด Config แล้วเก็บไว้ใน sessionStorage ให้อัตโนมัติ</div>
+  </div>
+  <script type="module" src="/src/config.js"></script>
+</body>
+
+</html>

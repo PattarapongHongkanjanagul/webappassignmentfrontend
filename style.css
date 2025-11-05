@@ -1,0 +1,267 @@
+/* ===== Sky Light Theme (กรมอุตุ feel) ===== */
+:root {
+    --bg-top: #EAF6FF;
+    /* ฟ้าอ่อน */
+    --bg-mid: #F8FBFF;
+    /* ขาวอมฟ้า */
+    --text: #0B2A3A;
+    /* น้ำเงินเทา อ่านง่าย */
+    --muted: #5B7485;
+    /* รอง */
+    --card: #FFFFFF;
+    /* พื้นการ์ด */
+    --border: #E3EEF6;
+    /* เส้นบาง */
+    --accent: #2B8CFF;
+    /* ฟ้าเข้ม */
+    --accent-2: #00B2FF;
+    /* ฟ้าเทอร์ควอยซ์ */
+    --ok: #14AE5C;
+    /* เขียวแจ้งสำเร็จ */
+    --danger: #E23C3C;
+    /* แดงแจ้ง error */
+    --shadow: 0 8px 30px rgba(18, 87, 158, .12);
+    --radius: 16px;
+    --focus: 0 0 0 4px rgba(43, 140, 255, .20);
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    color: var(--text);
+    background:
+        radial-gradient(1200px 500px at 20% -10%, #D6EEFF 0%, transparent 60%),
+        linear-gradient(180deg, var(--bg-top) 0%, var(--bg-mid) 100%);
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+}
+
+.container {
+    max-width: 980px;
+    margin: 36px auto;
+    padding: 0 20px
+}
+
+nav {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 10px;
+    transition: transform .12s ease, background .2s ease, box-shadow .2s ease;
+}
+
+nav a:hover {
+    background: #E9F2FF;
+    transform: translateY(-1px)
+}
+
+h1 {
+    font-size: 42px;
+    margin: 8px 0 16px;
+    letter-spacing: .2px
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 22px;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px
+}
+
+@media (max-width:720px) {
+    .row {
+        grid-template-columns: 1fr
+    }
+}
+
+.label {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 6px
+}
+
+.value {
+    font-size: 20px;
+    font-weight: 700
+}
+
+.notice {
+    font-size: 14px;
+    color: var(--muted);
+    margin: 8px 0 14px
+}
+
+.notice.success {
+    color: var(--ok)
+}
+
+.notice.error {
+    color: var(--danger);
+    white-space: pre-wrap
+}
+
+/* Inputs */
+input[type="number"],
+input[type="text"] {
+    width: 100%;
+    background: #F7FAFF;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 14px;
+    outline: none;
+    transition: border .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+input:focus {
+    border-color: var(--accent);
+    box-shadow: var(--focus);
+    background: #FFF
+}
+
+/* Buttons + micro-interaction (ripple) */
+button,
+.btn {
+    appearance: none;
+    border: 0;
+    background: linear-gradient(180deg, var(--accent) 0%, #1E78FF 100%);
+    color: #fff;
+    font-weight: 700;
+    padding: 10px 16px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(43, 140, 255, .25);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform .08s ease, box-shadow .2s ease, filter .2s ease;
+}
+
+button:hover {
+    filter: saturate(1.05);
+    box-shadow: 0 10px 22px rgba(43, 140, 255, .32)
+}
+
+button:active {
+    transform: translateY(1px)
+}
+
+button:disabled {
+    opacity: .6;
+    cursor: not-allowed
+}
+
+/* Ripple element */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    background: rgba(255, 255, 255, .5);
+    animation: ripple .6s linear;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0
+    }
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px
+}
+
+th,
+td {
+    padding: 12px 10px;
+    border-bottom: 1px solid var(--border)
+}
+
+thead th {
+    text-align: left;
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 700
+}
+
+tbody tr:hover {
+    background: #F7FBFF
+}
+
+tfoot td {
+    color: var(--muted);
+    font-size: 13px
+}
+
+/* Badges */
+.badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 999px;
+    background: #E9F2FF;
+    color: #145EA8;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* Skeleton loading */
+.skel {
+    display: inline-block;
+    height: 22px;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #EFF6FF 25%, #E3EEF8 37%, #EFF6FF 63%);
+    background-size: 400% 100%;
+    animation: shimmer 1.2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 100% 0
+    }
+
+    100% {
+        background-position: 0 0
+    }
+}
+
+.footer {
+    margin-top: 18px;
+    color: var(--muted);
+    font-size: 13px
+}
+
+/* Secondary button */
+.btn-ghost {
+    background: #ECF5FF;
+    color: #155CCF;
+    box-shadow: none;
+}
+
+.btn-ghost:hover {
+    filter: none;
+    box-shadow: 0 4px 12px rgba(21, 92, 207, .15)
+}
