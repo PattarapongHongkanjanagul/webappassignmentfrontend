@@ -1,4 +1,20 @@
 // ============ ENV ============
+
+import { loadConfig } from './config.js';
+
+const droneId = sessionStorage.getItem('droneId') || '3001';
+
+async function init() {
+  try {
+    const cfg = await loadConfig(droneId);
+    // ... โชว์ข้อมูล cfg บนหน้า
+  } catch (e) {
+    console.error(e);
+    document.querySelector('#config-error').textContent = `Load failed: ${e.message}`;
+  }
+}
+
+init();
 export const API_BASE = import.meta.env.VITE_API_BASE;
 export const DRONE_ID = import.meta.env.VITE_DRONE_ID;
 
