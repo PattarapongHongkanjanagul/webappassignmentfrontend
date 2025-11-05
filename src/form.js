@@ -1,4 +1,11 @@
 // src/form.js
+import { apiPost } from './api.js';
+
+export async function submitStatus(droneId, data) {
+  return apiPost(`status/${droneId}`, data);
+}
+
+
 import {
     API_BASE, jpost, getCfg,
     attachRipples, toast, fmtLocal
@@ -95,3 +102,4 @@ f.addEventListener('submit', async (e) => {
         btn.disabled = false;
     }
 });
+
