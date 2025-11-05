@@ -1,4 +1,12 @@
 // src/config.js
+// src/config.js
+import { apiGet } from './api.js';
+
+export async function loadConfig(droneId) {
+  // ห้ามขึ้นต้น path ด้วย “/” อีก (เรา clean ให้แล้ว)
+  return apiGet(`configs/${droneId}`);
+}
+
 import {
     API_BASE, DRONE_ID, jget, setCfg,
     attachRipples, toast
@@ -58,3 +66,4 @@ async function loadConfig() {
 }
 
 loadConfig();
+
