@@ -1,4 +1,16 @@
 // src/logs.js
+
+import { apiGet, apiPost } from './api.js';
+
+export async function loadLogs(droneId) {
+  return apiGet(`logs/${droneId}`);
+}
+
+export async function addLog(droneId, payload) {
+  return apiPost(`logs/${droneId}`, payload);
+}
+
+
 import {
     API_BASE, DRONE_ID, jget,
     attachRipples, toast, fmtLocal
@@ -92,3 +104,4 @@ btnNext.onclick = () => {
 };
 
 load();
+
